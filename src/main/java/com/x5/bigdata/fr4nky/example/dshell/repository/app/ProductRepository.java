@@ -15,7 +15,6 @@ import static org.hibernate.jpa.QueryHints.*;
 
 @Repository
 public interface ProductRepository extends
-
         JpaRepository<BigProduct, UUID> {
 
     @QueryHints(value = {

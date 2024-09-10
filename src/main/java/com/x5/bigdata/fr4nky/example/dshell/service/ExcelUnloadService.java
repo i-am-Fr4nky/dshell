@@ -48,13 +48,12 @@ public class ExcelUnloadService {
         var pageRequest = PageRequest.of(0, 10000);
 
 
-        var listData = repository.findAll();
-        System.out.println(listData.stream().count());
+
+//        var listData = repository.findAll();
+//        System.out.println(listData.stream().count());
 
         var streamData = repository.streamBy(pageRequest);
         var preparedResponse = setupResponseAttachment(response);
-
-
 
         try (
             var workbook = new SXSSFWorkbook();

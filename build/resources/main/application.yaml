@@ -1,24 +1,10 @@
 spring:
   application:
     name: ds-hell-demo-app
-#  datasource:
-#    url: jdbc:postgresql://localhost:5434/postgres
-#    username: postgres
-#    password: docker
   datasource:
-    app:
-      jdbcUrl: jdbc:postgresql://localhost:5434/postgres
-      username: postgres
-      password: docker
-      hibernate:
-        default_schema: app_schema
-    datamart:
-      jdbcUrl: jdbc:postgresql://localhost:5434/postgres
-      username: postgres
-      password: docker
-      hibernate:
-        default_schema: datamart_schema
-
+    url: jdbc:postgresql://localhost:5434/postgres
+    username: postgres
+    password: docker
 
   jpa:
     open-in-view: false
@@ -30,7 +16,4 @@ spring:
     show-sql: true
   flyway:
     enabled: true
-    url: ${spring.datasource.app.jdbcUrl}
-    user: ${spring.datasource.app.username}
-    password: ${spring.datasource.app.password}
-    schemas: ${spring.datasource.app.hibernate.default_schema}
+    schemas: app_schemas
